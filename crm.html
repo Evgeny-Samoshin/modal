@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modal</title>
 
+  <link rel="preload" href="./font/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./font/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./font/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="stylesheet" href="modal.css">
 </head>
+
 <body>
   <div class="modal">
-    <button class="close-btn"></button>
+    <button class="modal__close-btn"></button>
 
-    <form action="#" class="form">
-      <fieldset>
-        <legend>Добавить товар</legend>
-
-
-      </fieldset>
-    </form>
+    <div class="wrapper">
+      <div class="modal__title">Добавить товар</div>
+  
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="form">
+        <fieldset class="fieldset">
+          <div class="form__item">
+            <label class="form__item-label" for="name">Наименование</label>
+            <input class="form__item-input" type="text" name="name" id="name">
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="category">Категория</label>
+            <input class="form__item-input" type="text" name="category" id="category">
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="units">Единицы измерения</label>
+            <input class="form__item-input" type="text" name="units" id="units">
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="discountValue">Дисконт</label>
+            <div class="row">
+              <label class="form__label checkbox" for="discount">
+                <input class="checkbox__input" type="checkbox" name="discount" id="discount">
+              </label>
+              <input class="form__item-input disabled" type="text" name="discountValue" id="discountValue">
+            </div>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="description">Описание</label>
+            <textarea class="form__item-input form__item-textarea" name="description" id="description" cols="30" rows="10"></textarea>
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="quantity">Количество</label>
+            <input class="form__item-input" type="number" name="quantity" id="quantity">
+          </div>
+          <div class="form__item">
+            <label class="form__item-label" for="price">Цена</label>
+            <input class="form__item-input" type="number" name="price" id="price">
+          </div>
+        </fieldset>
+        <button class="form__btn" type="submit">Добавить товар</button>
+      </form>
+    </div>
   </div>
 </body>
+
 </html>
